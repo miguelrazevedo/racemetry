@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react'
-import { createSearchParams, useNavigate } from 'react-router'
-import { RacemetryData } from './lib/types'
+import { useNavigate } from 'react-router'
 
 function App(): React.JSX.Element {
   let navigate = useNavigate()
@@ -37,7 +36,7 @@ function App(): React.JSX.Element {
     }
   }
   return (
-    <div className="h-screen w-screen flex items-center justify-center space-x-2">
+    <div className="h-screen w-screen flex items-center justify-center space-x-2 ">
       <input
         className="hidden"
         accept=".json"
