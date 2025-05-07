@@ -1,0 +1,14 @@
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\bin\Debug\net8.0\Racemetry.exe
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\bin\Debug\net8.0\Racemetry.deps.json
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\bin\Debug\net8.0\Racemetry.runtimeconfig.json
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\bin\Debug\net8.0\Racemetry.dll
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\bin\Debug\net8.0\Racemetry.pdb
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\Racemetry.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\Racemetry.AssemblyInfoInputs.cache
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\Racemetry.AssemblyInfo.cs
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\Racemetry.csproj.CoreCompileInputs.cache
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\Racemetry.dll
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\refint\Racemetry.dll
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\Racemetry.pdb
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\Racemetry.genruntimeconfig.cache
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\ref\Racemetry.dll
