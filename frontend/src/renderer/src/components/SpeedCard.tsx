@@ -10,7 +10,7 @@ import { CartesianGrid, Line, LineChart, YAxis } from 'recharts'
 
 const chartConfig = {
   SpeedKmh: {
-    label: 'Speed (kph)',
+    label: 'Kph',
     color: '#0390fc'
   }
 } satisfies ChartConfig

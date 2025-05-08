@@ -10,6 +10,10 @@ import {
 import { RacemetryData } from '@renderer/lib/types'
 import { CartesianGrid, Line, LineChart, YAxis } from 'recharts'
 
+type PedalsCardProps = {
+  data: RacemetryData[]
+}
+
 const chartConfig = {
   Gas: {
     label: 'Throttle',
@@ -21,7 +25,7 @@ const chartConfig = {
   }
 } satisfies ChartConfig
 
-export default function PedalsCard({ data }: { data: RacemetryData[] }): React.JSX.Element {
+export default function PedalsCard({ data }: PedalsCardProps): React.JSX.Element {
   return (
     <Card>
       <CardHeader>

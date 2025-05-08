@@ -19,7 +19,7 @@ export default function GearCard({ data }: { data: RacemetryData[] }): React.JSX
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Speed (Kph)</CardTitle>
+        <CardTitle>Gear</CardTitle>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig} className="min-h-[200px] h-[250px] w-full">
