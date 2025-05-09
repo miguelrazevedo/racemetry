@@ -1,6 +1,5 @@
 ﻿using System.Text.Json;
-using Racemetry;
-using Racemetry.implementations;
+using Racemetry.implementations.ACC;
 
 // TODO: Validate args.
 // Get the game -> For now, let's assume it's ACC
@@ -29,7 +28,7 @@ using var acc = new ACCTelemetry();
 //}
 
 var isRecording = false;
-var dataList = new List<SPageFilePhysics>();
+var dataList = new List<Physics>();
 var lastPacket = 0;
 while (true)
 {
@@ -54,26 +53,33 @@ while (true)
         continue;
     }
 
-    var telemetry = acc.GetTelemetry();
-    if (telemetry.PacketId != lastPacket)
-    {
-        dataList.Add(telemetry);
-        lastPacket = telemetry.PacketId;
-    }
+    //var physics = acc.GetTelemetry();
+    var graphics = acc.GetGraphics();
+
+    //Console.WriteLine("Physics: ");
+    //Console.WriteLine(JsonSerializer.Serialize(physics, new JsonSerializerOptions { WriteIndented = true }));
+
+    Console.WriteLine("Graphics:");
+    Console.WriteLine(JsonSerializer.Serialize(graphics, new JsonSerializerOptions { WriteIndented = true }));
+    //if (physics.PacketId != lastPacket)
+    //{
+    //    dataList.Add(physics);
+    //    lastPacket = physics.PacketId;
+    //}
 
     await Task.Delay(33);
 
 }
 
-if (dataList.Count < 1)
-{
-    Console.WriteLine("No data has been saved");
-    return;
-}
+//if (dataList.Count < 1)
+//{
+//    Console.WriteLine("No data has been saved");
+//    return;
+//}
 
 
-string jsonData = JsonSerializer.Serialize(dataList, new JsonSerializerOptions { WriteIndented = true });
+//string jsonData = JsonSerializer.Serialize(dataList, new JsonSerializerOptions { WriteIndented = true });
 
-File.WriteAllText("./telemetryDatacsharp30Hz.json", jsonData);
+//File.WriteAllText("./telemetryDatacsharp30Hz.json", jsonData);
 
-Console.WriteLine($"An array with {dataList.Count} objects has been saved in telemetryDatacsharp.json file");
+//Console.WriteLine($"An array with {dataList.Count} objects has been saved in telemetryDatacsharp.json file");

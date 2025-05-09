@@ -12,3 +12,4 @@ D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\refint\Ra
 D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\Racemetry.pdb
 D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\Racemetry.genruntimeconfig.cache
 D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\ref\Racemetry.dll
+D:\Code\Console\Racemetry\Backend\Racemetry\Racemetry\obj\Debug\net8.0\Racemetry.sourcelink.json

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Racemetry")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd445c32fb298ed3889df9eb725953030c602ef6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Racemetry")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Racemetry")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
