@@ -15,7 +15,7 @@ type PedalsCardProps = {
 }
 
 const chartConfig = {
-  Gas: {
+  Throttle: {
     label: 'Throttle',
     color: '#0390fc'
   },

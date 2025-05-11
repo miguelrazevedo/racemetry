@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
 import {
-  Area,
   CartesianGrid,
   XAxis,
   YAxis,
@@ -25,7 +24,7 @@ type ZoomableChartProps = {
 }
 
 const chartConfig = {
-  Gas: {
+  Throttle: {
     label: 'Throttle',
     color: '#0390fc'
   },
@@ -49,8 +48,8 @@ export function ZoomThrottle({ data: initialData }: ZoomableChartProps): React.J
     if (initialData?.length) {
       setData(initialData)
       setOriginalData(initialData)
-      setStartTime(initialData[0].PacketId)
-      setEndTime(initialData[initialData.length - 1].PacketId)
+      setStartTime(initialData[0].PacketId_physics)
+      setEndTime(initialData[initialData.length - 1].PacketId_physics)
     }
   }, [initialData])
 
@@ -60,7 +59,8 @@ export function ZoomThrottle({ data: initialData }: ZoomableChartProps): React.J
     }
 
     const dataPointsInRange = originalData.filter(
-      (dataPoint) => dataPoint.PacketId >= startTime && dataPoint.PacketId <= endTime
+      (dataPoint) =>
+        dataPoint.PacketId_physics >= startTime && dataPoint.PacketId_physics <= endTime
     )
 
     // Ensure we have at least two data points for the chart to prevent rendering a single dot
@@ -94,8 +94,8 @@ export function ZoomThrottle({ data: initialData }: ZoomableChartProps): React.J
   }
 
   const handleReset = (): void => {
-    setStartTime(originalData[0].PacketId)
-    setEndTime(originalData[originalData.length - 1].PacketId)
+    setStartTime(originalData[0].PacketId_physics)
+    setEndTime(originalData[originalData.length - 1].PacketId_physics)
   }
 
   const handleZoom = (
@@ -134,8 +134,8 @@ export function ZoomThrottle({ data: initialData }: ZoomableChartProps): React.J
     }
 
     const currentRange =
-      (endTime || originalData[originalData.length - 1].PacketId) -
-      (startTime || originalData[0].PacketId)
+      (endTime || originalData[originalData.length - 1].PacketId_physics) -
+      (startTime || originalData[0].PacketId_physics)
     const zoomAmount = currentRange * zoomFactor * direction
 
     const chartRect = chartRef.current.getBoundingClientRect()
@@ -143,8 +143,8 @@ export function ZoomThrottle({ data: initialData }: ZoomableChartProps): React.J
     const chartWidth = chartRect.width
     const mousePercentage = mouseX / chartWidth
 
-    const currentStartTime = startTime || originalData[0].PacketId
-    const currentEndTime = endTime || originalData[originalData.length - 1].PacketId
+    const currentStartTime = startTime || originalData[0].PacketId_physics
+    const currentEndTime = endTime || originalData[originalData.length - 1].PacketId_physics
 
     const newStartTime = currentStartTime + zoomAmount * mousePercentage
     const newEndTime = currentEndTime - zoomAmount * (1 - mousePercentage)
@@ -198,13 +198,13 @@ export function ZoomThrottle({ data: initialData }: ZoomableChartProps): React.J
               >
                 <defs>
                   <linearGradient id="colorEvents" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor={chartConfig.Gas.color} stopOpacity={0.8} />
-                    <stop offset="95%" stopColor={chartConfig.Gas.color} stopOpacity={0.1} />
+                    <stop offset="5%" stopColor={chartConfig.Throttle.color} stopOpacity={0.8} />
+                    <stop offset="95%" stopColor={chartConfig.Throttle.color} stopOpacity={0.1} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid vertical={false} />
                 <XAxis
-                  dataKey="PacketId"
+                  dataKey="PacketId_physics"
                   tickFormatter={formatXAxis}
                   tickLine={false}
                   axisLine={false}
@@ -231,7 +231,7 @@ export function ZoomThrottle({ data: initialData }: ZoomableChartProps): React.J
                 <Line
                   type="monotone"
                   dataKey="Gas"
-                  stroke={chartConfig.Gas.color}
+                  stroke={chartConfig.Throttle.color}
                   strokeWidth={2}
                   isAnimationActive={false}
                   dot={false}

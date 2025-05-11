@@ -1,7 +1,7 @@
 ﻿namespace Racemetry.interfaces
 {
-    internal interface ITelemetryApp
+    internal interface ITelemetryApp<T>
     {
-        string GetTelemetryAsJSONString();
+        T GetFullTelemetry();
     }
 }

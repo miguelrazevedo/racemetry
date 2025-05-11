@@ -13,10 +13,15 @@
 
         // Graphics
         public int PacketId_graphics { get; set; }
-        public string? CurrentTime;
-        public string? LastTime;
-        public string? BestTime;
-        public string? Split;
-        public int CompletedLaps;
+        public string? CurrentTime { get; set; }
+        public string? LastTime { get; set; }
+        public string? BestTime { get; set; }
+        public string? Split { get; set; }
+        public int CompletedLaps { get; set; }
+
+        // Static Info
+        public string? CarModel { get; set; }
+        public string? Track { get; set; }
+
     }
 }

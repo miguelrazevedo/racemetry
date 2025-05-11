@@ -1,7 +1,4 @@
 import AutoZoomChart from '@renderer/components/AutoZoomChart'
-import GearCard from '@renderer/components/GearCard'
-import SpeedCard from '@renderer/components/SpeedCard'
-import { ChartConfig } from '@renderer/components/ui/chart'
 import ZoomableChart from '@renderer/components/ZoomableChart'
 import { RacemetryData } from '@renderer/lib/types'
 import { useEffect, useState } from 'react'
