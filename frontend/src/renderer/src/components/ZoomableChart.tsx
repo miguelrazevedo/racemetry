@@ -11,7 +11,6 @@ import {
   ChartLegend,
   ChartLegendContent
 } from '@renderer/components/ui/chart'
-import { Button } from '@renderer/components/ui/button'
 import { RacemetryData } from '@renderer/lib/types'
 
 type PedalsCardProps = {
@@ -37,10 +36,6 @@ export default function ZoomableChart({
   setRange
 }: PedalsCardProps): React.JSX.Element {
   const chartRef = useRef<HTMLDivElement>(null)
-
-  const reset = useCallback(() => {
-    setRange({ left: 0, right: data.length - 1 })
-  }, [data, setRange])
 
   const handleZoom = useCallback(
     (e: React.WheelEvent<HTMLDivElement>) => {
@@ -156,11 +151,6 @@ export default function ZoomableChart({
       <CardHeader className="flex flex-row flex-wrap gap-2 sm:gap-0 justify-between border-b">
         <div className="flex flex-col gap-1">
           <CardTitle>Throttle and Brake input</CardTitle>
-        </div>
-        <div className="flex items-center gap-2">
-          <Button size="sm" variant="outline" className="rounded" onClick={reset}>
-            Reset zoom
-          </Button>
         </div>
       </CardHeader>
       <CardContent className="w-full h-[250px] my-4">

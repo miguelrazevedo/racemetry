@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router'
 function App(): React.JSX.Element {
   let navigate = useNavigate()
 
-  const [filePath, setFilePath] = useState<File | null>(null)
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [isDisabled, setIsDisabled] = useState<boolean>(true)
 
   const inputFile = useRef(null)
@@ -12,7 +12,7 @@ function App(): React.JSX.Element {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     if (e.target.files && e.target.files.length > 0) {
-      setFilePath(e.target.files[0])
+      setSelectedFile(e.target.files[0])
       setIsDisabled(false)
     }
   }
@@ -24,7 +24,8 @@ function App(): React.JSX.Element {
 
   const handleAnalyzeClick = (): void => {
     const reader = new FileReader()
-    reader.readAsText(filePath!)
+    reader.readAsText(selectedFile!)
+    console.log(reader)
 
     reader.onload = (e) => {
       try {
@@ -48,7 +49,7 @@ function App(): React.JSX.Element {
         className="px-4 py-2 text-black font-bold bg-white cursor-pointer rounded-2xl border-2 border-gray-400 transition hover:bg-gray-400"
         onClick={onButtonClick}
       >
-        {filePath ? filePath?.name : 'Upload'}
+        {selectedFile ? selectedFile?.name : 'Upload'}
       </div>
 
       <button
